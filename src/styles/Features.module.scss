@@ -1,0 +1,42 @@
+@import 'mixins';
+
+.wrapper{
+    width: 100%;
+}
+.features{
+    padding: 2rem 2rem 4rem;
+
+    @include tablet() {
+        padding: 4rem 2.8rem 5rem;
+    }
+    @include desktop() {
+        padding: 7rem 3rem 8rem;
+    }
+}
+.features__header{
+    text-align: center;
+
+    & > h2{
+        font-size: 1.25rem;
+        color: $neutralDark;
+
+        @include tablet() {
+            font-size: 1.5rem;
+        }
+    }
+    
+    & > p{
+        margin-top: 1rem;
+        font-size: .9rem;
+        color: $neutralLight;
+        @include tablet() {
+            font-size: 1rem;
+        }
+
+    }
+    @include tablet() {
+        margin: 0 auto;
+        max-width: 550px;
+    }
+    
+}

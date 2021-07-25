@@ -1,0 +1,144 @@
+@import "mixins";
+
+.wrapper{
+    width: 100%;
+}
+.download{
+    padding: 2rem 2rem;
+
+    @include tablet() {
+        padding: 4rem 2.8rem 5rem;
+    }
+    @include desktop() {
+        padding: 7rem 3rem 8rem;
+    }
+}
+.download__header{
+    text-align: center;
+
+    & > h2{
+        font-size: 1.25rem;
+        color: $neutralDark;
+
+        @include tablet() {
+            font-size: 1.5rem;
+        }
+    }
+    
+    & > p{
+        margin-top: 1rem;
+        font-size: .9rem;
+        color: $neutralLight;
+        @include tablet() {
+            font-size: 1rem;
+        }
+
+    }
+    @include tablet() {
+        margin: 0 auto;
+        max-width: 550px;
+    }
+    
+}
+
+.download__cards{
+    margin-top: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    & > article:nth-child(2){
+        margin-top: 2rem;
+    }
+    & > article:last-child {
+        margin-top: 2rem;
+        
+        @include tablet() {
+            margin-top: 4rem;
+        }
+    }
+    @include tablet() {
+        gap: 1rem;
+    }
+    @include desktop() {
+        gap: 1.75rem;
+    }
+}
+.card{
+    width: 100%;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 2px 8px 15px rgba(0, 0, 0, 0.15);
+    padding: 2rem 0;
+    transition: all .15s ease-in;
+
+    &:hover{
+        box-shadow: 2px 8px 15px rgba(0, 0, 0, 0.25);
+        transform: scale(1.05);
+    }
+
+    & > .card__image {
+        width: 100%;
+        padding: 0 1.5rem;
+        & > img{
+            max-height: 150px;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+    & > .card__caption {
+        margin-top: 1.5rem;
+        text-align: center;
+
+        & h4 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: $neutralDark;
+        }
+        & p {
+            margin-top: .5rem;
+            font-size: .9rem;
+            font-weight: bold;
+            color: $neutralLight;
+        }
+    }
+    & > .card__cta{
+        padding: 0 1.5rem;
+
+        & > button{
+            width: 100%;
+            border-radius: 4px;
+            background: $primaryBlue;
+            color: #fff;
+            font-size: .7rem;
+            font-weight: bold;
+            height: 50px;
+            border: none;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all .3s ease-in;
+            cursor: pointer;
+
+            &:hover{
+                color: $primaryBlue;
+                border: 2px solid $primaryBlue;
+                background: transparent;
+            }
+            @include desktop() {
+                font-size: 1rem;
+            }
+        }
+    }
+    & > img{
+        width: 100%;
+        margin: 2rem 0;
+    }
+    @include tablet() {
+        width: 30%;
+        max-width: 320px;
+    }
+    @include desktop() {
+        width: 30%;
+        max-width: 320px;
+    }
+}

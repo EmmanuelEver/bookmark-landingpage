@@ -1,0 +1,54 @@
+@import 'mixins';
+
+.wrapper{
+    width: 100%;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    padding: 1rem 0 1rem;
+
+}
+.question{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all .3s ease-in;
+    cursor: pointer;
+
+    &:hover > h4{
+        color: $primaryRed;
+    }
+
+    & > h4{
+        font-weight: 400;
+    }
+    & > span{
+        stroke: $primaryBlue;
+        transition: all .3s ease-in-out;
+    }
+    &.active > span{
+        stroke: $primaryRed;
+        transform: rotate(180deg);
+    }
+    &.active:hover > h4{
+        color: $neutralDark;
+    }
+}
+.answer{
+    height: 0px;
+    opacity: 0;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all .3s linear;
+
+    & > p{
+        color: $neutralLight;
+        text-align: left;
+        font-size: .8rem;
+    }
+
+    &.show{
+        margin-top: 1rem;
+        max-height: 1000px;
+        height: auto;
+        opacity: 1;
+    }
+}

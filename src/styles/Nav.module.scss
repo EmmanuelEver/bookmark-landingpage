@@ -1,0 +1,93 @@
+@import "mixins";
+
+.nav{
+    max-width: 1600px;
+    margin: 0 auto;
+    width: 100%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 0 32px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 15;
+
+    @include tablet() {
+        padding: 0 50px;
+        position: relative;
+    }
+
+    &.showingMenu{
+        background-color: rgba(37, 43, 70, .9);
+    }
+}
+
+.logo{
+    height: 60%;
+    display: grid;
+    place-items: center;
+
+    & {
+        height: 100%;
+        object-fit: contain;
+    }
+}
+.hamburgerMenu{
+    height: 40px;
+    border: none;
+    background: none;
+    outline: none;
+    pointer-events: cursor;
+    display: block;
+
+    @include tablet() {
+        display: none;
+    }
+}
+
+.navLinks{
+    display: none;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+
+    & > li{
+        margin: 0 .75rem;
+        & > a{
+            font-size: .9rem;
+            color: $neutralDark;
+            transition: color .15s ease-in;
+        
+            letter-spacing: 1px;
+            &:hover{
+                color: $primaryRed;
+            }
+            &.loginBtn{
+                border: 2px solid $primaryRed;
+                padding: .5rem 1.3rem;
+                border-radius: 4px;
+                color: #fff;
+                letter-spacing: 1px;
+                background: $primaryRed;
+                transition: all .3s ease-in-out;
+            
+                &:hover{
+                    background: transparent;
+                    color: $primaryRed;
+                }
+            }
+        }
+        @include desktop() {
+            margin: 0 1rem;
+        }
+        @include largeDesktop() {
+            margin: 0 1.5rem;
+        }
+    }
+    @include tablet() {
+        display: flex;
+    }
+}

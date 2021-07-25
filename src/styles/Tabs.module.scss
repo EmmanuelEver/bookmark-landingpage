@@ -1,0 +1,14 @@
+@import 'mixins';
+
+.tabs{
+   width: 100%;
+   margin-top: 2rem;
+}
+.tabs__header{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    @include tablet() {
+        border-top: 1px solid rgba(0,0,0, .1);
+    }
+}

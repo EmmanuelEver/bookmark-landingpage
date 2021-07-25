@@ -1,0 +1,45 @@
+@import 'mixins';
+
+.tabItem{
+    width: 100%;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    position: relative;
+    cursor: pointer;
+
+    @include tablet() {
+        width: 33.33%;
+    }
+
+    & > h4 {
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 400;
+        color: $neutralLight;
+    }
+    &.active h4{
+        color: $neutralDark;
+    }
+    &::before{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        transform: translateX(-50%);
+        transition: all .3s ease-in-out;
+
+        @include tablet() {
+            height: 3px;
+        }
+    }
+    &.active::before{
+        width: 130px;
+        background-color: $primaryRed;
+
+        @include tablet() {
+             width: 100%;
+        }
+    }
+}
